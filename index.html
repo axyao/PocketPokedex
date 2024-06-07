@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokédex | UBC - CPSC447</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data/pokeball.png"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Add HTML content, SVG drawing area, ... -->
+<div class="container">
+    <h1>Easy-to-use Pokedex</h1>
+
+    <div class="section">
+        <h2>Select a Type</h2>
+        <svg id="type-filter"></svg>
+
+        <h2>Sum of Stats Distribution</h2>
+        <svg id="histogram"></svg>
+    </div>
+
+    <div class="section">
+        <div>
+            <h2>Pokémon Stat Distribution</h2>
+        </div>
+        <div class="selector">
+            <div>
+                <h3>Find a Pokemon</h3>
+                <form id="form">
+                    <input id="user-input" placeholder="Enter pokemon name...">
+                </form>
+            </div>
+            <div>
+                <h3>Select Vertical Axis Stat</h3>
+                <select id="yStatSelect">
+                    <option value="none" selected disabled hidden>Health</option>
+                </select>
+            </div>
+            <div>
+                <h3>Select Horizontal Axis Stat</h3>
+                <select id="xStatSelect">
+                    <option value="none" selected disabled hidden>Sum</option>
+                </select>
+            </div>
+        </div>
+        <div><h4>Click to Select or Deselect a Pokemon</h4></div>
+        <div>
+            <svg id="scatter-plot"></svg>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="radarContainer">
+            <h2>Current Team</h2>
+            <div class="radarViews">
+                <div>
+                    <svg id="radar-chart"></svg>
+                </div>
+                <div id="team-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="warning"></div>
+<!-- D3 bundle -->
+<script src="js/d3.v6.min.js"></script>
+
+<!-- Our JS code -->
+<script src="js/typeFilter.js"></script>
+<script src="js/histogram.js"></script>
+<script src="js/scatterPlot.js"></script>
+<script src="js/radarChart.js"></script>
+<script src="js/teamList.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
